@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Medium Slider</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3,#65c7f7,#0052d4);
+    font-family: Arial, sans-serif;
+}
+
+.slider-box{
+    width:80%;              /* Medium width */
+    max-width:900px;        /* Not too big */
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    text-align:center;
+    position:relative;
+}
+
+#slider{
+    width:100%;
+    height:450px;           /* Bigger height */
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.controls{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+button{
+    padding:12px 35px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.prev{
+    background:#ff4b2b;
+}
+
+.next{
+    background:#0072ff;
+}
+
+button:hover{
+    transform:scale(1.1);
+    opacity:0.9;
+}
+
+.dots{
+    margin-top:20px;
+}
+
+.dot{
+    height:14px;
+    width:14px;
+    margin:0 6px;
+    background:gray;
+    border-radius:50%;
+    display:inline-block;
+    cursor:pointer;
+}
+
+.active{
+    background:#ff4b2b;
+}
+
+.counter{
+    position:absolute;
+    top:20px;
+    right:25px;
+    background:black;
+    color:white;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="slider-box">
+
+    <div class="counter" id="counter"></div>
+
+    <img id="slider" src="" alt="image">
+
+    <div class="controls">
+        <button class="prev" onclick="prevPic()">Previous</button>
+        <button class="next" onclick="nextPic()">Next</button>
+    </div>
+
+    <div class="dots" id="dots"></div>
+
+</div>
+
+<script>
+let imagecount = 0;
+let slider = document.getElementById("slider");
+let counter = document.getElementById("counter");
+let dotsContainer = document.getElementById("dots");
+
+let images = [
+"https://images.unsplash.com/photo-1609017910188-993211b015d6?fm=jpg&q=60&w=3000",
+"https://static.vecteezy.com/system/resources/previews/041/731/532/non_2x/ai-generated-colorful-bird-perched-on-tree-branch-free-photo.jpeg",
+"https://static.vecteezy.com/system/resources/thumbnails/049/201/487/small_2x/a-colorful-array-of-birds-perched-on-a-branch-surrounded-by-lush-green-foliage-in-a-serene-natural-setting-photo.jpeg",
+"https://static.vecteezy.com/system/resources/thumbnails/027/716/685/small_2x/colorful-birds-on-cherry-tree-photo.jpg"
+];
+
+images.forEach((_, index) => {
+    let dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.addEventListener("click", () => {
+        imagecount = index;
+        updateSlider();
+    });
+    dotsContainer.appendChild(dot);
+});
+
+function updateSlider(){
+    slider.src = images[imagecount];
+    counter.innerText = (imagecount+1) + " / " + images.length;
+
+    document.querySelectorAll(".dot").forEach(dot => dot.classList.remove("active"));
+    document.querySelectorAll(".dot")[imagecount].classList.add("active");
+}
+
+function nextPic(){
+    imagecount = (imagecount + 1) % images.length;
+    updateSlider();
+}
+
+function prevPic(){
+    imagecount = (imagecount - 1 + images.length) % images.length;
+    updateSlider();
+}
+
+setInterval(nextPic, 3000);
+
+updateSlider();
+</script>
+
+</body>
+</html>

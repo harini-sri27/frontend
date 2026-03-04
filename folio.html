@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Harini Sri R - Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #eaeaea;
+        }
+
+        .resume {
+            width: 900px;
+            margin: 30px auto;
+            display: flex;
+            background: white;
+        }
+
+        /* LEFT PANEL */
+        .left {
+            width: 35%;
+            background-color: #6f8f8f;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .left img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .left h3 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .left p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .contact p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        /* RIGHT PANEL */
+        .right {
+            width: 65%;
+            padding: 40px;
+        }
+
+        .name-section {
+            background-color: #d8b8a0;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .name-section h1 {
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+
+        .name-section p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-left: 5px solid #6f8f8f;
+            padding-left: 10px;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .section ul {
+            margin-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        @media(max-width: 768px){
+            .resume {
+                flex-direction: column;
+                width: 95%;
+            }
+
+            .left, .right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <img src="profile.jpeg" alt="profile.jpeg">
+
+        <h3>PROFILE</h3>
+        <p>
+            Computer Science and Business Systems student.
+            Responsible, organized and passionate about learning
+            new technologies and solving real-world problems.
+        </p>
+
+        <h3>CONTACT ME</h3>
+        <div class="contact">
+            <p> 9944768729</p>
+            <p> rharinisri85@gmail.com</p>
+            <p> Tamil Nadu, India</p>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <div class="name-section">
+            <h1>HARINI SRI R</h1>
+        </div>
+
+        <div class="section">
+            <h2>EDUCATION</h2>
+            <p><strong>B.Tech – Computer Science and Business Systems</strong><br>
+            Dr. NGP Institute of Technology (2024 – 2028)</p>
+        </div>
+
+        <div class="section">
+            <h2>TECHNICAL SKILLS</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Python (Basics)</li>
+                <li>C Programming</li>
+                <li>MySQL (Basics)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>PROJECT</h2>
+            <p><strong>Smart Pothole Detection System</strong><br>
+            Developed a smart system to detect potholes and improve road safety.</p>
+        </div>
+
+        <div class="section">
+            <h2>LANGUAGE</h2>
+            <p>English<br>Tamil</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
